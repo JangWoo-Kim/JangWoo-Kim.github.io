@@ -16,6 +16,7 @@ h3 { font-size: 1rem; margin: 16px 0 4px; color: #555; }
 .summary { background: #f7f7f7; border-radius: 8px; padding: 16px; margin: 16px 0; }
 .price-big { font-size: 1.6rem; font-weight: 700; margin: 0; }
 .spread-note { font-weight: 600; margin: 6px 0 0; }
+.caution { background: #fff3cd; border: 1px solid #ffe69c; border-radius: 6px; padding: 10px 12px; font-size: .9rem; margin: 12px 0 0; }
 .siblings { color: #555; font-size: .9rem; }
 .change { color: #c0392b; font-weight: 600; }
 .muted { color: #888; font-size: .9rem; }
