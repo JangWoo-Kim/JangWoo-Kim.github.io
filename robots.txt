@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://JangWoo-Kim.github.io/price-pages/sitemap.xml
