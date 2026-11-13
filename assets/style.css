@@ -119,6 +119,54 @@ ul.plain a:hover, ul.plain a:active { text-decoration: underline; }
 .chart-axislabel { font-size: 10px; fill: var(--text-muted); }
 .chart-ptlabel { font-size: 11px; fill: var(--text); font-weight: 700; }
 
+.price-big .paren { display: block; font-size: .85rem; font-weight: 600; color: var(--text-muted); margin-top: 4px; letter-spacing: 0; }
+.kj-lead { font-size: 1.02rem; font-weight: 700; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--border); }
+.callout {
+  background: var(--accent-soft); border-radius: var(--radius-sm); padding: 10px 14px; margin: 0 0 20px;
+  font-size: .95rem; color: var(--text);
+}
+.callout a { font-weight: 700; }
+table.type-table tr.total td { font-weight: 800; border-top: 2px solid var(--border); background: var(--accent-soft); }
+.assume { display: flex; align-items: center; gap: 10px; margin: 14px 0 6px; flex-wrap: wrap; }
+.assume label { font-weight: 700; }
+.assume input {
+  width: 6rem; padding: 8px 10px; font-size: 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: var(--surface); color: var(--text);
+}
+ul.notes { margin: 0 0 8px; padding-left: 1.2rem; font-size: .88rem; color: var(--text-muted); }
+ul.notes li { margin: 4px 0; }
+table.basis-table th, table.basis-table td { font-size: .78rem; padding: 8px 4px; }
+table.basis-table th:nth-child(n), table.basis-table td:nth-child(n) { text-align: left; }
+table.kj-table td, table.kj-table th { white-space: nowrap; padding-left: 4px; padding-right: 4px; }
+table.kj-table td:first-child, table.kj-table th:first-child { white-space: normal; }
+table.kj-table td { font-size: .9rem; }
+table.kj-table th:nth-child(n), table.kj-table td:nth-child(n) { text-align: left; }
+table.kj-table th:nth-child(n+3), table.kj-table td:nth-child(n+3) { text-align: right; }
+table.kj-table td:nth-child(3) { font-weight: 400; }
+table.kj-table td:nth-child(4) { font-weight: 700; }
+table.kj-table tr.total td:first-child { text-align: left; white-space: normal; }
+table.kj-table tr.total td:last-child { text-align: right; font-weight: 800; }
+table.packed-table td:nth-child(n+2), table.packed-table th:nth-child(n+2) { text-align: right; }
+table.packed-table td:nth-child(3) { font-weight: 400; }
+table.packed-table td:nth-child(5) { font-weight: 700; }
+@media (max-width: 640px) {
+  table.stack thead { display: none; }
+  table.stack, table.stack tbody { display: block; }
+  table.stack tr { display: block; padding: 8px 0; border-bottom: 1px solid var(--border); background: none !important; }
+  table.stack tr:last-child { border-bottom: none; }
+  table.stack td {
+    display: flex; justify-content: space-between; gap: 14px; border: none; padding: 3px 4px;
+    text-align: right !important; font-weight: 400 !important; font-size: .88rem;
+  }
+  table.stack td::before { content: attr(data-label); color: var(--text-muted); font-weight: 600; text-align: left; flex: 0 0 auto; }
+  table.stack td:first-child { font-weight: 700 !important; font-size: .95rem; }
+  /* 사용한 품목·품종·단위 표는 한 줄로 이어 붙여 카드 높이를 줄인다 */
+  table.basis-table.stack td { display: inline; padding: 0; text-align: left !important; color: var(--text-muted); }
+  table.basis-table.stack td::before { content: " · "; font-weight: 400; color: var(--text-muted); }
+  table.basis-table.stack td:first-child { display: block; color: var(--text); }
+  table.basis-table.stack td:first-child::before, table.basis-table.stack td:nth-child(2)::before { content: ""; }
+}
+
 .site-footer {
   max-width: 720px; margin: 8px auto 0; padding: 16px; color: var(--text-muted); font-size: .78rem;
 }
@@ -129,6 +177,8 @@ ul.plain a:hover, ul.plain a:active { text-decoration: underline; }
 @media (min-width: 900px) {
   main, .site-footer { max-width: 1160px; }
   .site-header { max-width: 1160px; margin: 0 auto; }
+  /* 김장 장바구니는 표 중심 읽기 페이지라 폭을 좁게 유지 */
+  body.page-kimjang main, body.page-kimjang .site-footer, body.page-kimjang .site-header { max-width: 860px; }
 
   body.page-home main {
     display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; align-items: start;
